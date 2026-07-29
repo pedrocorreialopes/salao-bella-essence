@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bella Essence — Salão de beleza premium. Realçando sua beleza, elevando sua autoestima. Agende online serviços de cabelo, maquiagem, manicure, estética e muito mais.">
+  <meta name="keywords" content="salão de beleza, corte de cabelo, maquiagem, manicure, estética, noiva, spa, bem-estar, luxo, agendamento online">
+  <meta name="author" content="Pedro Correia Lopes Filho">
+  <meta name="theme-color" content="#D4AF37">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Bella Essence | Salão de Beleza Premium">
+  <meta property="og:description" content="Realçando sua beleza, elevando sua autoestima. Agende online e viva uma experiência de luxo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bellaessence.com.br">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Bella Essence | Salão de Beleza Premium</title>
+  <link rel="canonical" href="https://www.bellaessence.com.br">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans antialiased bg-cream text-charcoal overflow-x-hidden">
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
+
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" aria-label="Navegação principal">
+      <a href="#" class="flex items-center gap-2 group" aria-label="Bella Essence - Página inicial">
+        <span class="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-rose-gold flex items-center justify-center text-white font-serif text-lg font-bold shadow-lg">B</span>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl font-bold text-charcoal tracking-wide group-hover:text-gold transition-colors">Bella Essence</span>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-rose-gold">Beauty & Wellness</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#home" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Home</a>
+        <a href="#sobre" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Sobre</a>
+        <a href="#servicos" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Serviços</a>
+        <a href="#galeria" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Galeria</a>
+        <a href="#equipe" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Equipe</a>
+        <a href="#planos" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Planos</a>
+        <a href="#blog" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Blog</a>
+        <a href="#contato" class="nav-link text-sm font-medium text-charcoal hover:text-gold transition-colors">Contato</a>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-4">
+        <button id="theme-toggle" class="w-10 h-10 rounded-full glass flex items-center justify-center text-charcoal hover:text-gold transition-all" aria-label="Alternar tema">
+          <i data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+        <a href="#agendamento" class="btn-primary text-sm px-6 py-2.5 rounded-full">Agendar</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-full glass flex items-center justify-center text-charcoal" aria-label="Abrir menu" aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-cream/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-500" aria-hidden="true">
+      <div class="flex flex-col items-center justify-center h-full gap-8">
+        <a href="#home" class="mobile-nav-link text-2xl font-serif font-medium">Home</a>
+        <a href="#sobre" class="mobile-nav-link text-2xl font-serif font-medium">Sobre</a>
+        <a href="#servicos" class="mobile-nav-link text-2xl font-serif font-medium">Serviços</a>
+        <a href="#galeria" class="mobile-nav-link text-2xl font-serif font-medium">Galeria</a>
+        <a href="#equipe" class="mobile-nav-link text-2xl font-serif font-medium">Equipe</a>
+        <a href="#planos" class="mobile-nav-link text-2xl font-serif font-medium">Planos</a>
+        <a href="#blog" class="mobile-nav-link text-2xl font-serif font-medium">Blog</a>
+        <a href="#contato" class="mobile-nav-link text-2xl font-serif font-medium">Contato</a>
+        <a href="#agendamento" class="btn-primary text-lg px-8 py-3 rounded-full mt-4">Agendar Agora</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <div class="hero-bg absolute inset-0 bg-cover bg-center bg-no-repeat scale-105" style="background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-cream/80 via-cream/40 to-cream/90"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <p class="hero-subtitle text-rose-gold uppercase tracking-[0.4em] text-sm font-medium mb-6">Salão de Beleza Premium</p>
+        <h1 class="hero-title font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-charcoal mb-6">
+          Realçando sua <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-rose-gold to-gold">beleza</span> natural
+        </h1>
+        <p class="hero-text text-lg md:text-xl text-charcoal/70 max-w-2xl mx-auto mb-10 font-light">
+          Uma experiência de luxo para quem busca exclusividade, bem-estar e resultados incríveis. Agende seu momento de transformação.
+        </p>
+        <div class="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#agendamento" class="btn-primary text-base px-8 py-4 rounded-full flex items-center gap-2">
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+            Agendar Agora
+          </a>
+          <a href="#servicos" class="btn-secondary text-base px-8 py-4 rounded-full flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+            Conhecer Serviços
+          </a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn-whatsapp text-base px-8 py-4 rounded-full flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <a href="#sobre" class="text-charcoal/40 hover:text-gold transition-colors" aria-label="Rolar para baixo">
+          <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="sobre" class="section-padding relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="about-images relative">
+            <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl transform lg:translate-x-8">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Profissional finalizando cabelo de cliente" class="w-full h-[500px] object-cover" loading="lazy">
+            </div>
+            <div class="absolute -bottom-8 -left-8 w-64 h-64 rounded-[2rem] overflow-hidden shadow-xl border-4 border-cream z-20 hidden md:block">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="Tratamento facial relaxante" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="absolute top-10 -left-4 glass rounded-2xl p-6 z-30 hidden md:block shadow-lg">
+              <p class="font-serif text-4xl font-bold text-gold">15+</p>
+              <p class="text-sm text-charcoal/70">Anos de experiência</p>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Sobre Nós</p>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Bella Essence</h2>
+            <p class="text-charcoal/70 text-lg leading-relaxed mb-6">
+              Somos um refúgio de beleza e bem-estar, onde cada detalhe foi pensado para oferecer uma experiência sensorial única. Desde 2011, combinamos técnicas avançadas, produtos de alta performance e um atendimento exclusivo.
+            </p>
+            <p class="text-charcoal/70 leading-relaxed mb-8">
+              Nossa missão é realçar a beleza de cada cliente, respeitando sua individualidade e proporcionando resultados que elevam a autoestima. Contamos com profissionais premiados, equipamentos de última geração e uma estrutura inspirada nos melhores spas internacionais.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6 mb-8">
+              <div class="counter-card glass rounded-2xl p-6 text-center">
+                <p class="counter font-serif text-4xl font-bold text-gold" data-target="25000">0</p>
+                <p class="text-sm text-charcoal/70 mt-1">Clientes atendidos</p>
+              </div>
+              <div class="counter-card glass rounded-2xl p-6 text-center">
+                <p class="counter font-serif text-4xl font-bold text-rose-gold" data-target="48">0</p>
+                <p class="text-sm text-charcoal/70 mt-1">Procedimentos</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <span class="badge"><i data-lucide="award" class="w-4 h-4"></i> Premium</span>
+              <span class="badge"><i data-lucide="shield-check" class="w-4 h-4"></i> Certificado</span>
+              <span class="badge"><i data-lucide="heart" class="w-4 h-4"></i> Bem-estar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicos" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Nossos Serviços</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Experiências de beleza exclusivas</h2>
+          <p class="text-charcoal/70">Cada serviço é uma assinatura de cuidado, técnica e sofisticação. Escolha o seu momento.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-10" id="service-filters" role="tablist">
+          <button class="filter-btn active" data-filter="todos" role="tab" aria-selected="true">Todos</button>
+          <button class="filter-btn" data-filter="Cabelos" role="tab" aria-selected="false">Cabelos</button>
+          <button class="filter-btn" data-filter="Maquiagem" role="tab" aria-selected="false">Maquiagem</button>
+          <button class="filter-btn" data-filter="Manicure" role="tab" aria-selected="false">Manicure</button>
+          <button class="filter-btn" data-filter="Estética" role="tab" aria-selected="false">Estética</button>
+        </div>
+
+        <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Services injected via JS -->
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="#agendamento" class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+            Agendar seu horário
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After -->
+    <section id="antes-depois" class="section-padding relative bg-gradient-to-b from-cream via-[#F5E6CC]/20 to-cream">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Transformações</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Antes e Depois</h2>
+          <p class="text-charcoal/70">Arraste para comparar e se inspirar nos resultados dos nossos procedimentos.</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="before-after-container rounded-[2rem] overflow-hidden shadow-2xl relative h-[400px] md:h-[500px]" role="img" aria-label="Comparação antes e depois de tratamento capilar">
+            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1200&q=80" alt="Antes" class="before-after-image absolute inset-0 w-full h-full object-cover">
+            <div class="before-after-overlay absolute inset-0 w-full h-full overflow-hidden" style="clip-path: inset(0 50% 0 0);">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="Depois" class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div class="slider-handle absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-lg" style="left: 50%;">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center text-gold">
+                <i data-lucide="move-horizontal" class="w-6 h-6"></i>
+              </div>
+            </div>
+            <span class="absolute top-4 left-4 bg-charcoal/70 text-white text-xs px-3 py-1 rounded-full">Antes</span>
+            <span class="absolute top-4 right-4 bg-gold text-white text-xs px-3 py-1 rounded-full">Depois</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="galeria" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Galeria</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Momentos de beleza</h2>
+          <p class="text-charcoal/70">Inspire-se com fotos reais do nosso dia a dia, serviços e ambiente.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-10" id="gallery-filters">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="Cabelos">Cabelos</button>
+          <button class="filter-btn" data-filter="Maquiagem">Maquiagem</button>
+          <button class="filter-btn" data-filter="Manicure">Manicure</button>
+          <button class="filter-btn" data-filter="Estética">Estética</button>
+          <button class="filter-btn" data-filter="Noivas">Noivas</button>
+        </div>
+
+        <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+          <!-- Gallery items injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="equipe" class="section-padding relative bg-gradient-to-b from-cream to-[#F5E6CC]/30">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Nossa Equipe</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Especialistas dedicados</h2>
+          <p class="text-charcoal/70">Profissionais apaixonados, certificados e prontos para cuidar de você.</p>
+        </div>
+
+        <div id="team-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Team members injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="depoimentos" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Depoimentos</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">O que nossas clientes dizem</h2>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+          <div id="testimonials-slider" class="overflow-hidden">
+            <!-- Testimonials injected via JS -->
+          </div>
+          <div class="flex justify-center gap-3 mt-8">
+            <button id="prev-testimonial" class="w-12 h-12 rounded-full glass flex items-center justify-center text-charcoal hover:text-gold transition-colors" aria-label="Depoimento anterior">
+              <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button id="next-testimonial" class="w-12 h-12 rounded-full glass flex items-center justify-center text-charcoal hover:text-gold transition-colors" aria-label="Próximo depoimento">
+              <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section id="planos" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Planos e Pacotes</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Viva a experiência VIP</h2>
+          <p class="text-charcoal/70">Escolha o plano ideal para você e aproveite benefícios exclusivos.</p>
+        </div>
+
+        <div id="plans-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Plans injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="loja" class="section-padding relative bg-gradient-to-b from-[#F5E6CC]/30 to-cream">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Loja Virtual</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Produtos selecionados</h2>
+          <p class="text-charcoal/70">Leve para casa os produtos profissionais que usamos no salão.</p>
+        </div>
+
+        <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Products injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="agendamento" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Agendamento Online</p>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Reserve seu momento</h2>
+            <p class="text-charcoal/70 text-lg mb-8">Escolha o serviço, profissional, data e horário. A confirmação é enviada automaticamente por e-mail e WhatsApp.</p>
+
+            <div class="space-y-6 mb-10">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-gold shrink-0">
+                  <i data-lucide="calendar" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal">Agendamento 24h</h3>
+                  <p class="text-charcoal/70 text-sm">Escolha o melhor horário sem filas ou espera.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-gold shrink-0">
+                  <i data-lucide="user-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal">Profissional preferido</h3>
+                  <p class="text-charcoal/70 text-sm">Selecione quem vai cuidar de você.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-gold shrink-0">
+                  <i data-lucide="bell" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal">Lembretes automáticos</h3>
+                  <p class="text-charcoal/70 text-sm">Receba notificações no WhatsApp e e-mail.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form id="booking-form" class="booking-form glass rounded-[2rem] p-8 md:p-10 shadow-2xl">
+            <h3 class="font-serif text-2xl font-bold text-charcoal mb-6">Novo agendamento</h3>
+            <div class="space-y-5">
+              <div>
+                <label for="booking-name" class="block text-sm font-medium text-charcoal mb-2">Nome completo</label>
+                <input type="text" id="booking-name" required class="w-full px-4 py-3 rounded-xl bg-white/50 border border-[#F5E6CC] focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all" placeholder="Seu nome">
+              </div>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label for="booking-phone" class="block text-sm font-medium text-charcoal mb-2">WhatsApp</label>
+                  <input type="tel" id="booking-phone" required class="w-full px-4 py-3 rounded-xl bg-white/50 border border-[#F5E6CC] focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all" placeholder="(11) 99999-9999">
+                </div>
+                <div>
+                  <label for="booking-email" class="block text-sm font-medium text-charcoal mb-2">E-mail</label>
+                  <input type="email" id="booking-email" required class="w-full px-4 py-3 rounded-xl bg-white/50 border border-[#F5E6CC] focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all" placeholder="seu@email.com">
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label for="booking-service" class="block text-sm font-medium text-charcoal mb-2">Serviço</label>
+                  <select id="booking-service" required class="w-full px-4 py-3 rounded-xl bg-white/50 border border-[#F5E6CC] focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all">
+                    <option value="">Selecione</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="booking-professional" class="block text-sm font-medium text-charcoal mb-2">Profissional</label>
+                  <select id="booking-professional" class="w-full px-4 py-3 rounded-xl bg-white/50 border border-[#F5E6CC] focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all">
+                    <option value="">Qualquer</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label for="booking-date" class="block text-sm font-medium text-charcoal mb-2">Data</label>
+                  <input type="date" id="booking-date" required class="w-full px-4 py-3 rounded-xl bg-white/50 border border-[#F5E6CC] focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all">
+                </div>
+                <div>
+                  <label for="booking-time" class="block text-sm font-medium text-charcoal mb-2">Horário</label>
+                  <select id="booking-time" required class="w-full px-4 py-3 rounded-xl bg-white/50 border border-[#F5E6CC] focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all">
+                    <option value="">Selecione</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="btn-primary w-full py-4 rounded-xl text-base flex items-center justify-center gap-2">
+                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                Confirmar Agendamento
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Blog</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Dicas, tendências e cuidados</h2>
+        </div>
+
+        <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog posts injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-padding relative bg-gradient-to-b from-[#F5E6CC]/30 to-cream">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">FAQ</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Perguntas Frequentes</h2>
+        </div>
+
+        <div id="faq-container" class="space-y-4">
+          <!-- FAQ items injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contato" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16">
+          <div>
+            <p class="text-rose-gold uppercase tracking-[0.3em] text-sm font-medium mb-4">Contato</p>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">Visite-nos</h2>
+            <p class="text-charcoal/70 text-lg mb-8">Estamos prontos para recebê-lo. Entre em contato e agende sua experiência de beleza.</p>
+
+            <div class="space-y-6 mb-10">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-gold shrink-0">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal">Endereço</h3>
+                  <p class="text-charcoal/70 text-sm">Av. Paulista, 1000 — Bela Vista, São Paulo/SP</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-gold shrink-0">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal">Telefone</h3>
+                  <p class="text-charcoal/70 text-sm">(11) 99999-9999</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-gold shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal">E-mail</h3>
+                  <p class="text-charcoal/70 text-sm">contato@bellaessence.com.br</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full glass flex items-center justify-center text-gold shrink-0">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal">Horário</h3>
+                  <p class="text-charcoal/70 text-sm">Seg a Sáb: 9h às 20h | Dom: 10h às 16h</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+                <i class="fab fa-tiktok text-xl"></i>
+              </a>
+              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-[2rem] overflow-hidden shadow-2xl h-[400px] lg:h-auto">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197585309639!2d-46.6586829!3d-23.5613507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c97748!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do endereço Bella Essence"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-cream pt-20 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+        <div class="lg:col-span-1">
+          <a href="#" class="flex items-center gap-2 mb-6">
+            <span class="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-rose-gold flex items-center justify-center text-white font-serif text-lg font-bold">B</span>
+            <span class="font-serif text-xl font-bold text-cream">Bella Essence</span>
+          </a>
+          <p class="text-cream/60 text-sm leading-relaxed mb-6">Realçando sua beleza, elevando sua autoestima. Um salão de beleza premium para momentos inesquecíveis.</p>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-lg font-bold text-cream mb-6">Links Rápidos</h4>
+          <ul class="space-y-3 text-sm text-cream/60">
+            <li><a href="#sobre" class="hover:text-gold transition-colors">Sobre</a></li>
+            <li><a href="#servicos" class="hover:text-gold transition-colors">Serviços</a></li>
+            <li><a href="#galeria" class="hover:text-gold transition-colors">Galeria</a></li>
+            <li><a href="#equipe" class="hover:text-gold transition-colors">Equipe</a></li>
+            <li><a href="#agendamento" class="hover:text-gold transition-colors">Agendar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-lg font-bold text-cream mb-6">Serviços</h4>
+          <ul class="space-y-3 text-sm text-cream/60">
+            <li><a href="#servicos" class="hover:text-gold transition-colors">Cabelos</a></li>
+            <li><a href="#servicos" class="hover:text-gold transition-colors">Maquiagem</a></li>
+            <li><a href="#servicos" class="hover:text-gold transition-colors">Manicure</a></li>
+            <li><a href="#servicos" class="hover:text-gold transition-colors">Estética</a></li>
+            <li><a href="#planos" class="hover:text-gold transition-colors">Planos VIP</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-lg font-bold text-cream mb-6">Newsletter</h4>
+          <p class="text-cream/60 text-sm mb-4">Receba dicas, novidades e ofertas exclusivas.</p>
+          <form id="newsletter-form" class="flex gap-2">
+            <input type="email" required placeholder="Seu e-mail" class="flex-1 px-4 py-2.5 rounded-full bg-white/10 border border-white/20 text-cream placeholder-cream/40 text-sm outline-none focus:border-gold transition-colors">
+            <button type="submit" class="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center hover:bg-gold/80 transition-colors" aria-label="Inscrever">
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-cream/40 text-sm">© 2026 Bella Essence. Todos os direitos reservados.</p>
+        <p class="text-cream/40 text-sm">Criado e desenvolvido por <span class="text-gold">Pedro Correia Lopes Filho</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" aria-label="Fale pelo WhatsApp">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors" aria-label="Fechar">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-2xl shadow-2xl">
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] glass px-6 py-4 rounded-2xl shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-3">
+    <i data-lucide="check-circle" class="w-5 h-5 text-success"></i>
+    <span id="toast-message" class="text-charcoal font-medium">Mensagem</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
