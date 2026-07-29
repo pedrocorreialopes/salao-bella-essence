@@ -1,0 +1,51 @@
+[
+  {
+    "id": "pkg-bronze",
+    "nome": "Plano Bronze",
+    "preco": "R$ 99/mês",
+    "destaque": false,
+    "beneficios": [
+      "1 serviço por mês à escolha",
+      "10% de desconto em produtos",
+      "Agendamento prioritário"
+    ]
+  },
+  {
+    "id": "pkg-prata",
+    "nome": "Plano Prata",
+    "preco": "R$ 199/mês",
+    "destaque": true,
+    "beneficios": [
+      "2 serviços por mês à escolha",
+      "15% de desconto em produtos",
+      "Agendamento prioritário",
+      "Brinde de aniversário"
+    ]
+  },
+  {
+    "id": "pkg-ouro",
+    "nome": "Plano Ouro",
+    "preco": "R$ 349/mês",
+    "destaque": false,
+    "beneficios": [
+      "4 serviços por mês à escolha",
+      "20% de desconto em produtos",
+      "Agendamento VIP",
+      "Brinde de aniversário",
+      "Acesso antecipado a novidades"
+    ]
+  },
+  {
+    "id": "pkg-vip",
+    "nome": "Plano VIP",
+    "preco": "R$ 599/mês",
+    "destaque": true,
+    "beneficios": [
+      "Serviços ilimitados*",
+      "25% de desconto em produtos",
+      "Agendamento VIP com horário fixo",
+      "Brindes exclusivos mensais",
+      "Acompanhamento personalizado"
+    ]
+  }
+]

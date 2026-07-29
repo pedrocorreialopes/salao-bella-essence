@@ -1,1 +1,26 @@
-data
+[
+  {
+    "id": "blog-1",
+    "titulo": "5 Dicas para Manter o Cabelo Saudável no Verão",
+    "categoria": "Cuidados com o cabelo",
+    "resumo": "Proteja seus fios do sol, cloro e sal com orientações simples e eficazes para o verão.",
+    "imagem": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80",
+    "data": "2026-01-15"
+  },
+  {
+    "id": "blog-2",
+    "titulo": "Tendências de Maquiagem 2026",
+    "categoria": "Tendências",
+    "resumo": "Descubra as cores, texturas e acabamentos que vão dominar o ano.",
+    "imagem": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80",
+    "data": "2026-02-10"
+  },
+  {
+    "id": "blog-3",
+    "titulo": "Cronograma Capilar: o Guia Completo",
+    "categoria": "Beleza",
+    "resumo": "Aprenda a montar um cronograma personalizado para hidratação, nutrição e reconstrução.",
+    "imagem": "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=600&q=80",
+    "data": "2026-03-05"
+  }
+]

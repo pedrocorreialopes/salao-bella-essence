@@ -1,0 +1,122 @@
+[
+  {
+    "id": "svc-corte-fem",
+    "nome": "Corte Feminino",
+    "categoria": "Cabelos",
+    "descricao": "Corte personalizado com análise do formato do rosto, textura e estilo de vida para valorizar sua beleza natural.",
+    "imagem": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+    "duracao": "45 minutos",
+    "preco": "R$ 120,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-corte-masc",
+    "nome": "Corte Masculino",
+    "categoria": "Cabelos",
+    "descricao": "Corte moderno, acabamento perfeito e finalização com produtos premium para um visual impecável.",
+    "imagem": "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80",
+    "duracao": "40 minutos",
+    "preco": "R$ 90,00",
+    "destaque": false
+  },
+  {
+    "id": "svc-escova",
+    "nome": "Escova Modelada",
+    "categoria": "Cabelos",
+    "descricao": "Escova com volume, brilho e movimento, utilizando ferramentas profissionais de alta performance.",
+    "imagem": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    "duracao": "60 minutos",
+    "preco": "R$ 150,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-hidratacao",
+    "nome": "Hidratação Premium",
+    "categoria": "Cabelos",
+    "descricao": "Tratamento profundo para recuperar a maciez, o brilho e a saúde dos fios danificados.",
+    "imagem": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80",
+    "duracao": "60 minutos",
+    "preco": "R$ 180,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-coloracao",
+    "nome": "Coloração Especialista",
+    "categoria": "Cabelos",
+    "descricao": "Coloração personalizada com técnicas avançadas e produtos de alta performance para um resultado duradouro.",
+    "imagem": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80",
+    "duracao": "120 minutos",
+    "preco": "R$ 280,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-mechas",
+    "nome": "Mechas e Luzes",
+    "categoria": "Cabelos",
+    "descricao": "Técnicas de mechas clássicas, balayage, ombré hair e contornos de luz para iluminar o visual.",
+    "imagem": "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=800&q=80",
+    "duracao": "150 minutos",
+    "preco": "R$ 350,00",
+    "destaque": false
+  },
+  {
+    "id": "svc-maquiagem-social",
+    "nome": "Maquiagem Social",
+    "categoria": "Maquiagem",
+    "descricao": "Maquiagem impecável para eventos, festas e ocasiões especiais com produtos de longa duração.",
+    "imagem": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80",
+    "duracao": "60 minutos",
+    "preco": "R$ 200,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-maquiagem-noiva",
+    "nome": "Maquiagem de Noiva",
+    "categoria": "Maquiagem",
+    "descricao": "Maquiagem deslumbrante para o grande dia, com teste prévio e acompanhamento até o evento.",
+    "imagem": "https://images.unsplash.com/photo-1595951305554-12c64369c45e?auto=format&fit=crop&w=800&q=80",
+    "duracao": "90 minutos",
+    "preco": "R$ 450,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-manicure",
+    "nome": "Manicure Tradicional",
+    "categoria": "Manicure",
+    "descricao": "Cuidado completo para suas unhas com corte, lixamento, hidratação e esmaltação impecável.",
+    "imagem": "https://images.unsplash.com/photo-1604654894610-df63bc399371?auto=format&fit=crop&w=800&q=80",
+    "duracao": "45 minutos",
+    "preco": "R$ 70,00",
+    "destaque": false
+  },
+  {
+    "id": "svc-esmaltação-gel",
+    "nome": "Esmaltação em Gel",
+    "categoria": "Manicure",
+    "descricao": "Esmaltação em gel com durabilidade de até 21 dias, brilho intenso e acabamento perfeito.",
+    "imagem": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80",
+    "duracao": "60 minutos",
+    "preco": "R$ 130,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-limpeza-pele",
+    "nome": "Limpeza de Pele",
+    "categoria": "Estética",
+    "descricao": "Limpeza profunda que renova a pele, remove impurezas e promove luminosidade natural.",
+    "imagem": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
+    "duracao": "75 minutos",
+    "preco": "R$ 220,00",
+    "destaque": true
+  },
+  {
+    "id": "svc-design-sobrancelha",
+    "nome": "Design de Sobrancelhas",
+    "categoria": "Estética",
+    "descricao": "Design personalizado que valoriza o olhar e harmoniza as sobrancelhas com o formato do rosto.",
+    "imagem": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80",
+    "duracao": "30 minutos",
+    "preco": "R$ 80,00",
+    "destaque": false
+  }
+]

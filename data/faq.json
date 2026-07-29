@@ -1,0 +1,27 @@
+[
+  {
+    "id": "faq-1",
+    "pergunta": "Como faço para agendar um atendimento?",
+    "resposta": "Você pode agendar diretamente pelo site, pelo WhatsApp ou ligando para nosso telefone. A confirmação é enviada automaticamente."
+  },
+  {
+    "id": "faq-2",
+    "pergunta": "Quais formas de pagamento são aceitas?",
+    "resposta": "Aceitamos cartões de crédito e débito, Pix, dinheiro e transferência bancária. Também oferecemos parcelamento em até 6x sem juros."
+  },
+  {
+    "id": "faq-3",
+    "pergunta": "Posso escolher o profissional?",
+    "resposta": "Sim! Durante o agendamento você pode escolher o profissional de sua preferência, de acordo com a especialidade e disponibilidade."
+  },
+  {
+    "id": "faq-4",
+    "pergunta": "O salão atende crianças?",
+    "resposta": "Atendemos crianças a partir de 5 anos, com profissionais especializados e um ambiente acolhedor."
+  },
+  {
+    "id": "faq-5",
+    "pergunta": "Qual é a política de cancelamento?",
+    "resposta": "Pedimos que cancelamentos ou remanejamentos sejam feitos com pelo menos 24 horas de antecedência para evitar taxas."
+  }
+]

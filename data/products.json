@@ -1,0 +1,62 @@
+[
+  {
+    "id": "prod-shampoo",
+    "nome": "Shampoo Revitalizante",
+    "categoria": "Shampoo",
+    "preco": 89.9,
+    "avaliacao": 4.8,
+    "imagem": "https://images.unsplash.com/photo-1556228720-19875c4b84e2?auto=format&fit=crop&w=400&q=80",
+    "descricao": "Limpeza suave que revitaliza e fortalece os fios.",
+    "favorito": false
+  },
+  {
+    "id": "prod-mascara",
+    "nome": "Máscara Hidratação Intensa",
+    "categoria": "Máscaras",
+    "preco": 129.9,
+    "avaliacao": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80",
+    "descricao": "Hidratação profunda para cabelos ressecados e danificados.",
+    "favorito": true
+  },
+  {
+    "id": "prod-oleo",
+    "nome": "Óleo Reparador de Pontas",
+    "categoria": "Óleos",
+    "preco": 79.9,
+    "avaliacao": 4.7,
+    "imagem": "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=400&q=80",
+    "descricao": "Brilho, maciez e proteção térmica para as pontas dos cabelos.",
+    "favorito": false
+  },
+  {
+    "id": "prod-secador",
+    "nome": "Secador Profissional Dourado",
+    "categoria": "Secadores",
+    "preco": 499.9,
+    "avaliacao": 4.9,
+    "imagem": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=400&q=80",
+    "descricao": "Secador de alta performance com design premium e tecnologia iônica.",
+    "favorito": true
+  },
+  {
+    "id": "prod-base",
+    "nome": "Base Líquida HD",
+    "categoria": "Maquiagem",
+    "preco": 149.9,
+    "avaliacao": 4.8,
+    "imagem": "https://images.unsplash.com/photo-1631730486784-54506bd0d3a2?auto=format&fit=crop&w=400&q=80",
+    "descricao": "Base de alta definição com cobertura natural e longa duração.",
+    "favorito": false
+  },
+  {
+    "id": "prod-kit-barba",
+    "nome": "Kit Completo para Barba",
+    "categoria": "Produtos para barba",
+    "preco": 189.9,
+    "avaliacao": 4.6,
+    "imagem": "https://images.unsplash.com/photo-1621607502119-0e1f916cf6e5?auto=format&fit=crop&w=400&q=80",
+    "descricao": "Shampoo, óleo e balm para uma barba sempre alinhada e hidratada.",
+    "favorito": false
+  }
+]
